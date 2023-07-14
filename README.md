@@ -1,6 +1,6 @@
 # Rewind Helper
 
-Rewind Helper is a launchd script designed to manage file storage on your primary drive by moving older files to a secondary drive. This ensures optimal performance when accessing recent files, saves storage space on the primary drive, and conserves power by minimizing usage of the external storage. In particular, I noticed better performance for the Ask Rewind feature versus storing all data on an external drive. My storage solution was a SanDisk Extreme Pro MicroSD in a BaseQi 420A flush adapter in a MacBook Pro M2 Max.
+Rewind Helper is a launchd script designed to manage file storage on your primary drive by moving older files to a secondary drive for the program [Rewind](https://www.rewind.ai). This ensures optimal performance when accessing recent files, saves storage space on the primary drive, and conserves power by minimizing usage of the external storage. In particular, I noticed better performance for the Ask Rewind feature versus storing all data on an external drive. My storage solution was a SanDisk Extreme Pro MicroSD in a BaseQi 420A flush adapter in a MacBook Pro M2 Max.
 
 ## Disclaimer
 
@@ -19,7 +19,6 @@ The project consists of three main files:
 
 - C compiler (for example, gcc)
 - zsh shell
-- macOS environment (due to use of launchd)
 
 ## Usage
 
