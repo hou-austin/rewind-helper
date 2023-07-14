@@ -58,6 +58,13 @@ for LOCATION_A in "${LOCATIONS_A[@]}"; do
                   fi
               fi
           fi
+      elif [ -L "$folder" ]; then  # If it's a symlink
+          target=$(readlink "$folder")
+          if [ "$(basename "$target")" != "$(basename "$folder")" ]; then
+              # If target name doesn't match symlink name
+              mv "$target" "$(dirname "$target")/$(basename "$folder")"
+              echo "Renamed target folder to match symlink name: $target"
+          fi
       fi
   done
 done

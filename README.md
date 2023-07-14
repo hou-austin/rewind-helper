@@ -1,8 +1,11 @@
 # Rewind Helper
 
-Rewind Helper is a launchd script designed to manage file storage on your primary drive by moving older files to a secondary drive. This ensures optimal performance when accessing recent files, saves storage space on the primary drive, and conserves power by minimizing usage of the external storage.
+Rewind Helper is a launchd script designed to manage file storage on your primary drive by moving older files to a secondary drive. This ensures optimal performance when accessing recent files, saves storage space on the primary drive, and conserves power by minimizing usage of the external storage. In particular, I noticed better performance for the Ask Rewind feature versus storing all data on an external drive. My storage solution was a SanDisk Extreme Pro MicroSD in a BaseQi 420A flush adapter in a MacBook Pro M2 Max.
 
-**You will need to modify the `LOCATION_B` path in `rewind_helper.sh` to a desired path**
+## Disclaimer
+
+- There is no guarantee that this will continue to work when Rewind is updated (tested on v1.2219).
+- There is also no guarantee that this will not corrupt your Rewind data: **Backups are highly advised**.
 
 ## Files
 
@@ -20,13 +23,14 @@ The project consists of three main files:
 
 ## Usage
 
-1. Run the `install.sh` script:
+1. **You will need to modify the `LOCATION_B` path in `rewind_helper.sh` to a desired path**
+2. Run the `install.sh` script:
 
    ```bash
    ./install.sh
    ```
 
-The script is now installed and will automatically run once every day, moving files older than 14 days from the primary location (`$HOME/Library/Application Support/com.memoryvault.MemoryVault/chunks` and `$HOME/Library/Application Support/com.memoryvault.MemoryVault/snippets`) to the secondary location (`/Volumes/STEALTH/Rewind`).
+The script is now installed and will automatically run once every day, moving files older than 14 days from the primary location (`$HOME/Library/Application Support/com.memoryvault.MemoryVault/chunks` and `$HOME/Library/Application Support/com.memoryvault.MemoryVault/snippets`) to the secondary location (you need to specify this).
 
 ## Logs
 
