@@ -2,7 +2,7 @@
 
 Rewind Helper is a launchd script designed to manage file storage on your primary drive by moving older files to a secondary drive for the program [Rewind](https://www.rewind.ai). This ensures optimal performance when accessing recent files, saves storage space on the primary drive, and conserves power by minimizing usage of the external storage. In particular, I noticed better performance for the Ask Rewind feature versus storing all data on an external drive. My storage solution was a SanDisk Extreme Pro MicroSD in a BaseQi 420A flush adapter in a MacBook Pro M2 Max.
 
-With my data, it saved about 78% of space on the internal disk. A significant portion has been moved to the external drive.
+With my data, there was a **78% reduction in space taken on the internal drive**.
 
 ## Disclaimer
 
@@ -31,7 +31,7 @@ The project consists of three main files:
    ./install.sh
    ```
 
-The script is now installed and will automatically run once every day, moving files older than 14 days from the primary location (`$HOME/Library/Application Support/com.memoryvault.MemoryVault/chunks` and `$HOME/Library/Application Support/com.memoryvault.MemoryVault/snippets`) to the secondary location (you need to specify this).
+The script is now installed and will automatically run once every day, moving files older than 14 days from the primary location (`$HOME/Library/Application Support/com.memoryvault.MemoryVault/chunks` and `$HOME/Library/Application Support/com.memoryvault.MemoryVault/snippets`) to the secondary location (**you need to specify this manually**).
 
 ## Logs
 
