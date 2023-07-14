@@ -8,6 +8,9 @@ With my data, there was a **78% reduction in space taken on the internal drive**
 
 - There is no guarantee that this will continue to work when Rewind is updated (tested on v1.2219).
 - There is also no guarantee that this will not corrupt your Rewind data: **Backups are highly advised**.
+- Do **NOT** disconnect your external drive when Rewind is in use. I do not know what will happen if you do so.
+- I have not tested this with a NAS endpoint.
+- I have not tested this on another system, only my own. You may need to make some modifications to get it working.
 
 ## Files
 
