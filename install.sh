@@ -13,6 +13,34 @@ sudo cp rewind_helper.sh /usr/local/bin/rewind_helper/
 # Make the shell script executable
 sudo chmod +x /usr/local/bin/rewind_helper/rewind_helper.sh
 
+# Dyanmically set plist file
+username=$(whoami)
+plist_path="./com.austinhou.rewindhelper.plist"
+plist_content="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+    <key>Label</key>
+    <string>com.austinhou.rewindhelper</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/rewind_helper/rewind_helper</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StartInterval</key>
+    <integer>86400</integer>
+    <key>StandardOutPath</key>
+    <string>/var/log/rewind_helper/script.log</string>
+    <key>StandardErrorPath</key>
+    <string>/var/log/rewind_helper/error.log</string>
+    <key>UserName</key>
+    <string>${username}</string>
+</dict>
+</plist>"
+
+echo "${plist_content}" > "${plist_path}"
+
 # Copy the plist file to the appropriate location
 mkdir -p $HOME/Library/LaunchAgents
 cp com.austinhou.rewindhelper.plist $HOME/Library/LaunchAgents/
