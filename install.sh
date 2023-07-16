@@ -28,8 +28,15 @@ plist_content="<?xml version=\"1.0\" encoding=\"UTF-8\"?>
     </array>
     <key>RunAtLoad</key>
     <true/>
-    <key>StartInterval</key>
-    <integer>86400</integer>
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Hour</key>
+            <integer>16</integer>
+            <key>Minute</key>
+            <integer>22</integer>
+        </dict>
+    </array>
     <key>StandardOutPath</key>
     <string>/var/log/rewind_helper/script.log</string>
     <key>StandardErrorPath</key>
